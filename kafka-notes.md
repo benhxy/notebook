@@ -1,17 +1,19 @@
-# Kafka concepts
+# Kafka notes
+
+## Kafka concepts
 1. Producer
 1. Broker
 1. Consumer/ Consumer group
 1. Topic
 1. Partition
 
-# Kafka implementation details
+## Kafka implementation details
 1. How does Kafka manage nodes?
     * Kafka depends on Zookeeper to keep consistent states of nodes.
 1. How is a log encoded and stored in Kafka?
 1. What files/directories does Kafka uses? How to configure?
 
-# Event-driven design patterns
+## Event-driven design patterns
 1. What are the benefits of event sourcing over request/response (direct API call)?
     * Better isolation: Services are decoupled and can change independently.
     * Offline data: A service can still work without the source service online. The event log (source data) can be updated when the source service comes back online.
@@ -28,5 +30,5 @@
     * In orchestration, the whole workflow is written down, in code, in one place. That makes it easy to reason about the system. 
 
 
-# References
+## References
 1. Design Event-Driven Systems: Conceptsand Patterns for Streaming Services with Apache Kafka, Ben Stopford, 2018
