@@ -1,11 +1,13 @@
 # Kafka notes
 
 ## Kafka concepts
-1. Producer
-1. Broker
-1. Consumer/ Consumer group
+1. Producer, broker, and consumer
 1. Topic
 1. Partition
+1. Kafka Connect API 
+    * Kafka Connect API and associated Connector ecosystem provides an out-of-the-box mechanism to push data into, or pull data from, a variety of databases, data sources, and data sinks.
+1. Kafka Streams API
+    * Kafka Streams API ships with a simple embedded database, called a state store, built into the API.
 
 ## Kafka implementation details
 1. How does Kafka manage nodes?
@@ -28,7 +30,16 @@
 1. What is the benefit of event collaboration (choreographies)? What is the benefit of centralized workflow (orchestration)?
     * In event collaboration, if you’re implementing a service, you can change the way you work and no other services need to know or care about it. It better suits larger implementations (particularly those that span teams and hence change independently of one another).
     * In orchestration, the whole workflow is written down, in code, in one place. That makes it easy to reason about the system. 
-
+1. What is a bounded context?
+    * A bounded context describes a set of closely related components or services that share code and are deployed together. Within the context, we can use a mixture of request/event, which allows reuse of data. Contexts must be decoupled by events only.
+1. What are two different types of events?
+    * Notifiation: a call for action.
+    * Replication: publish data to transfer states.
+1. Difference between event-driven application and streaming application?
+    * Event-driven apps use a single stream of event to trigger its processing.
+    * Streaming apps use one or more input streams, and produce one or more output streams. They can also be stateful, storing the state transferred from the input streams.
+1. Stateful streaming vs. stateless streaming.
+    * 
 
 ## References
 1. Design Event-Driven Systems: Conceptsand Patterns for Streaming Services with Apache Kafka, Ben Stopford, 2018
