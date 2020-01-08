@@ -1,15 +1,16 @@
 # Kafka notes
 
-## Kafka concepts
+## Concepts
 1. Producer, broker, and consumer
 1. Topic
 1. Partition
 1. Kafka Connect API 
     * Kafka Connect API and associated Connector ecosystem provides an out-of-the-box mechanism to push data into, or pull data from, a variety of databases, data sources, and data sinks.
+    * Connect Sink can also export data from Kafka to database.
 1. Kafka Streams API
     * Kafka Streams API ships with a simple embedded database, called a state store, built into the API.
 
-## Kafka implementation details
+## Implementation details
 1. How does Kafka manage nodes?
     * Kafka depends on Zookeeper to keep consistent states of nodes.
 1. How is a log encoded and stored in Kafka?
@@ -22,6 +23,10 @@
 1. When a service has too many interfaces, we eventually need to break them futher into services, starting another cycle of refactor.
 1. If we copy data outside of a service and evolve it, there will be more error in the derived data over time, causing data inconsistency.
 1. Querying data in another service through interface is very costly, and the shape/view of data might not fit one's need.
+1. When changing schema of a view, just reload all data and regenerate it. (Schema on read)
+
+## Caveats
+1. Generated view takes time to reload/construct. So only take data that is necessary from the log, and use write-optimized database such as Redis.
 
 ## Event-driven design patterns
 1. What are the benefits of event sourcing over request/response (direct API call)?
