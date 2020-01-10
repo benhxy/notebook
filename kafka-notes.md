@@ -9,12 +9,36 @@
     * Connect Sink can also export data from Kafka to database.
 1. Kafka Streams API
     * Kafka Streams API ships with a simple embedded database, called a state store, built into the API.
+1. Transaction
+    * Messages sent to different topics, within a transaction, will either all be written or none at all.
+    * Messages sent to a single topic, in a transaction, will never be subject to duplicates, even on failure.
+1. Transaction coordinator
+    * 2PC/ lock service for keeping track of a transaction progress. Usually Zookeeper.
+1. KSQL
+1. Compacted topic
+    * Similar to SST/LSM-tree based database, a changed/deleted log is appended, and the old logs are deleted when compact happens, and only the latest state is preserved.
 
 ## Implementation details
 1. How does Kafka manage nodes?
     * Kafka depends on Zookeeper to keep consistent states of nodes.
 1. How is a log encoded and stored in Kafka?
+    * Usually using Avro, but can also use ProtoBuf or JSON.
+    * Usually use a centralized schema registry to manage schema versions and validation.
 1. What files/directories does Kafka uses? How to configure?
+1. How does Kafka broker achieve "deliver exactly once"?
+    * There are two possible places for message duplication: 
+        * Producer process fails to receive acknowledgment and hence resends.
+        * Consumer process fails to commit offset and hence re-reads.
+    * Solution:
+        * Each producer is given a unique identifier, and each message has a sequence number. If broker sees two message with same producer/sequence id, it knows the message is resent.
+        * Consumer only shows the message to application when commit marker arrives. Even if the payload/markers are read many times, the payload is presented only once.
+1. How does atomic commit work?
+    * One transaction contains messages to be sent to multiple topics.
+    * First send a begin marker message to all topics.
+    * Second send payload messages.
+    * Third send a commit or abort marker to flush messages.
+    * Consumer client buffers the message until seeing a commit or abort marker. Payload message can be seen by application only after commit marker arrives.
+    * The sending process is governed by a transaction coordinator which uses 2PC for accuracy.
 
 ## Problems to solve
 1. In microservice architecture, services are usually encapsulated with defined interfaces.
@@ -23,12 +47,15 @@
 1. When a service has too many interfaces, we eventually need to break them futher into services, starting another cycle of refactor.
 1. If we copy data outside of a service and evolve it, there will be more error in the derived data over time, causing data inconsistency.
 1. Querying data in another service through interface is very costly, and the shape/view of data might not fit one's need.
-1. When changing schema of a view, just reload all data and regenerate it. (Schema on read)
+1. When changing schema of a view, just reload all data and regenerate it. (Schema on read).
 
 ## Caveats
 1. Generated view takes time to reload/construct. So only take data that is necessary from the log, and use write-optimized database such as Redis.
 
 ## Event-driven design patterns
+1. Tightly-bound context
+    * Within a tight context, services can share database, use REST API with little sacrifice.
+    * Across contexts, things should be async and immutable.
 1. What are the benefits of event sourcing over request/response (direct API call)?
     * Better isolation: Services are decoupled and can change independently.
     * Offline data: A service can still work without the source service online. The event log (source data) can be updated when the source service comes back online.
@@ -56,3 +83,4 @@
 
 ## References
 1. Design Event-Driven Systems: Conceptsand Patterns for Streaming Services with Apache Kafka, Ben Stopford, 2018
+1. Transactions in Apache Kafka: https://www.confluent.io/blog/transactions-apache-kafka/
