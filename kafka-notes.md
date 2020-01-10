@@ -84,3 +84,4 @@
 ## References
 1. Design Event-Driven Systems: Conceptsand Patterns for Streaming Services with Apache Kafka, Ben Stopford, 2018
 1. Transactions in Apache Kafka: https://www.confluent.io/blog/transactions-apache-kafka/
+1. Hello World, Kafka Connect + Kafka Streams: https://www.confluent.io/blog/hello-world-kafka-connect-kafka-streams/
