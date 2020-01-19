@@ -52,7 +52,7 @@
 ## Caveats
 1. Generated view takes time to reload/construct. So only take data that is necessary from the log, and use write-optimized database such as Redis.
 
-## Event-driven design patterns
+## Design/ patterns
 1. Tightly-bound context
     * Within a tight context, services can share database, use REST API with little sacrifice.
     * Across contexts, things should be async and immutable.
