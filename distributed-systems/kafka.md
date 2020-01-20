@@ -1,4 +1,4 @@
-# Kafka notes
+# Kafka
 
 ## Concepts
 1. Producer, broker, and consumer
