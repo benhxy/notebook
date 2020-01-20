@@ -7,5 +7,4 @@
 
 ### Neste loop join
 
-
 [1]: https://en.wikipedia.org/wiki/Category:External_memory_algorithms
