@@ -15,6 +15,7 @@
 1. Transaction coordinator
     * 2PC/ lock service for keeping track of a transaction progress. Usually Zookeeper.
 1. KSQL
+    * 
 1. Compacted topic
     * Similar to SST/LSM-tree based database, a changed/deleted log is appended, and the old logs are deleted when compact happens, and only the latest state is preserved.
 

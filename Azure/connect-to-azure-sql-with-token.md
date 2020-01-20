@@ -5,6 +5,19 @@
 1. The benefit is that only those whitelisted Azure resources can access target SQL databases. There's no secret so no risk of leakage. This also eliminates the need to create, manage, and rotate secret.
 1. Official documentation is not very comprehensive, thus I'm adding documentation here.
 
+## Pros/ cons
+1. Pros: 
+    * No need to manage/rotate secret.
+	* No risk of secret/certificate leakage.
+	* No need to workaround AAD PPE stamp as in AAD authentication (for Microsoft first party applications).
+
+1. Cons:
+    * Still need to go in DB and add resources as users with SQL query (for Microsoft 1st party apps, it's tricky in confidential/military clouds). 
+    * Cannot debug the connection process locally.
+	* Need to handle long-connection token expiration (e.g. hours-long deamon jobs).
+    * Need to add config switch to fall back to regular connection since it does not work in local environment.
+
+
 ## Steps
 1. Enable managed identity for compute resources
     * Go to a resource
