@@ -7,8 +7,23 @@
 * Such paths and vertices form a tree.
 * The tree with the lowest sum of paths' wedight is a minimum spanning tree.
 * A minimum spanning tree has (V – 1) edges where V is the number of vertices in the given graph.
-
-## Basic algorithms
+### [Tree-like graph][Minimum-height-tree]
+* From any node, the graph can be traversed like a tree.
+* No circular path.
+* Usually undirected. 
+* E = V - 1
+### [Eulerian path]
+* Eulerian Path is a path in graph that visits every edge exactly once.
+    * All vertices with nonzero degree belong to a single strongly connected component.
+    * Zero or two vertices have odd edges.
+    * For directed graph, if two vertices have odd edges, one must have one more indegree, and the other musth have one more outdegree.
+* Eulerian Cycle is an Eulerian Path which starts and ends on the same vertex.
+    * All vertices with nonzero degree belong to a single strongly connected component.
+    * All vertices have even edges.
+    * For directed graph, in degree and out degree of every vertex is same.
+* Use DFS to find if a graph is Eulerian.
+---
+## Basic algorithms (building blocks of advanced algorithms)
 ### Depth-first search
 * Need no introduction.
 ### Breath-first search
@@ -40,8 +55,8 @@
     * Manhattan: abs(delta(x) + abs(delta(y)), used when only traveling L/R/U/D. 
     * Diagnal: max(abs(delta(x)), abs(delta(y)), used when traveling 8 directions.
 
-
-## Advanced algorithms
+---
+## Advanced algorithms (designed for a specific problem)
 
 ### [Kruskal’s Minimum Spanning Tree Algorithm]
 * How it works:
@@ -84,8 +99,21 @@
 ### [Bellman–Ford negative path algorithm]
 ### [Johnson’s algorithm for All-pairs shortest paths]
 ### [Floyd Warshall Algorithm]
+### [Hierholzer’s Algorithm for directed graph]
+* What is it:
+    * It finds and prints the Euler Cycle in a graph.
+* How it works:
+    * From any point, start DFS. (O(E))
+    * When there is no more edge to traverse, backtrack.
+    * When backtracking, push the backtracked nodes into a stack or a list.
+    * When all the edges are traversed, pop all elements from the stack (or reverse the list). (O(V))
+    * Time complexity: O(V+E).
+* Why it works:
+    * Whenever a deadend is reached, we know that this sub-path must be travered after other sub-paths. That's why we push them in stack.
+* Related problem: [Reconstruct itinery](https://leetcode.com/problems/reconstruct-itinerary/)
 
 
+[Eulerian path]: https://www.geeksforgeeks.org/eulerian-path-and-circuit/
 [Minimum spanning tree]: https://www.geeksforgeeks.org/applications-of-minimum-spanning-tree/
 [Kruskal’s Minimum Spanning Tree Algorithm]: https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/
 [Dijkstra’s shortest path algorithm]: https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/
@@ -94,3 +122,5 @@
 [Bellman–Ford negative path algorithm]: http://en.wikipedia.org/wiki/Bellman-Ford_algorithm
 [Johnson’s algorithm for All-pairs shortest paths]: https://www.geeksforgeeks.org/johnsons-algorithm/
 [Floyd Warshall Algorithm]: https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
+[Minimum-height-tree]: https://leetcode.com/problems/minimum-height-trees/
+[Hierholzer’s Algorithm for directed graph]: https://www.geeksforgeeks.org/hierholzers-algorithm-directed-graph/
