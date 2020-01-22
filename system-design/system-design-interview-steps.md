@@ -46,4 +46,3 @@
 * Break big problems into smaller problems
 * Use common patterns to solve each problem
 * Don't go too far in scalability
-* 
