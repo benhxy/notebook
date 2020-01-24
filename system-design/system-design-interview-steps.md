@@ -46,8 +46,15 @@
 * Pub-sub (e.g. Kafka)
 * High-availability store/ distributed lock (e.g. Zookeeper, Chubby, etcd)
 
-## Philosophies:
+## Philosophies
 * Break big problems into smaller problems.
 * Use common patterns to solve each problem.
 * Don't go too far in scalability.
 * Be open about the disadvantages/ issues/ tradeoffs with the design.
+
+## Tips
+* Ask for both functional and non-functional requirement up front. Don't start design before knowing the scale.
+* Understand the scope of problem. Know which parts are blackboxes, and which are not.
+* For every requirements, offer and compare different options, and talk about tradeoffs.
+* Assign priorities to requirements. If there is not enough time, focus on P0 requirements.
+* Have zones on whiteboard: requirements, quantitative analysis/ scaling, data models, components, workflows.
