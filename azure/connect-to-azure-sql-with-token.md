@@ -25,6 +25,7 @@
 	* Enable system assigned identity
     * Alternatively, this step can be replaced by [ARM template][2]
     * After this step, you can find the resource names under Azure Portal > Azure AD > Enterprise Apps
+    * Note: Essentially every resource is represented by a service principal in AAD. You can find the service principal under Azure AD > Enterprise Applications. The service principal name is the name we use in the next step.
 1. Whitelist identities in SQL databases and add read/write permission
     * Obtain admin permission for SQL (usually via JIT)
 	* Login SQL database with AAD integrated authentication
