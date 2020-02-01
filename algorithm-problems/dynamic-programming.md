@@ -32,3 +32,10 @@
     * In this problem, DP does not seem to improve time complexity, as we still need to go through each combination to count them, which can be O(2^n) if all people have all hats.
     * DP approach puts a limit on the number of people, as bitmask is limited by integer size. DFS approach does not have this limit.
     * DFS approach puts a limit on the stack height. If memory is ample, it is not too bad.
+
+## Travelling Salesman Problem
+* Problem
+    * Given a 2D grid of characters representing a town where '*' represents the houses, '#' represents the blockage, '.' represents the vacant street area. Currently you are (0, 0) position.
+    * Our task is to determine the minimum distance to be moved to visit all the houses and return to our initial position at (0, 0). You can only move to adjacent cells that share exactly 1 edge with the current cell.
+    * https://www.geeksforgeeks.org/bitmasking-dynamic-programming-set-2-tsp/
+* 
