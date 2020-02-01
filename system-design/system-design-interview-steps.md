@@ -4,6 +4,7 @@
 * Functional requirements
     * User-facing: Input/ output (API)
     * Background/ daemon: jobs/ processes
+    * Scope: which parts requires design, which parts are existing systems/blackboxes
 * Non-functional requirements (assumptions)
     * Active users
     * Average requests (read/ write) per user per day
@@ -55,6 +56,6 @@
 ## Tips
 * Ask for both functional and non-functional requirement up front. Don't start design before knowing the scale.
 * Understand the scope of problem. Know which parts are blackboxes, and which are not.
-* For every requirements, offer and compare different options, and talk about tradeoffs.
+* For every requirements, offer options/alternatives, and compare their pros/cons/tradeoffs.
 * Assign priorities to requirements. If there is not enough time, focus on P0 requirements.
-* Have zones on whiteboard: requirements, quantitative analysis/ scaling, data models, components, workflows.
+* Divide whiteboard into zones: requirements, quantitative analysis/ scaling, data models, components, workflows.

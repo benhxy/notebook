@@ -17,9 +17,17 @@
 ## Step 4 : Adding memoization or tabulation for the state
 * Improve complexity by storing sub-problem results and removing repeated calculation.
 
-
+## Tabulation vs Memorization [1]
+* Tabulation: 
+    * Start from the smallest subproblem, and compute larger subproblems based on small subproblem results.
+    * For example, calculate dp[0], dp[1] .... and finally dp[n].
+* Memorization:
+    * Start from the largest subproblem and recursively calculate smaller subproblems.
+    * For example, dp[n] = transition(dp[n - 1]), if dp[n - 1] is not already calculated, then calculate dp[n - 1] first.
+    * In this method, we usually initiate the entire dp table with a special value (e.g. -1), so we know the result is not computed yet.
 
 Reference:
 * https://www.geeksforgeeks.org/solve-dynamic-programming-problem/
 * https://www.geeksforgeeks.org/dynamic-programming/
 * https://leetcode.com/tag/dynamic-programming/
+* https://www.geeksforgeeks.org/tabulation-vs-memoization/
