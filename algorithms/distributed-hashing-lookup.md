@@ -1,4 +1,4 @@
-# Algorithms in distributed systems
+# Distributed hashing/ lookup algorithms
 
 ### Rendezvous hashing [1]
 * What is it
