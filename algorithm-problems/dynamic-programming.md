@@ -48,14 +48,16 @@
 * DP approach
     * Pre-calculate the distance between any two houses. This requires O(H * n).
     * Define state
-        * _i_ = a subset of visited houses.
-        * _j_ = the next house to visit.
-        * _value(i, j)_ = the minimum path distance traveling from visited subset i to the next house j.
+        * _i_ = a subset of visited houses, represented by a bitmask.
+        * _j_ = the last house visited.
+        * _value(i, j)_ = the minimum path distance at house j after visited all houses in i.
     * State transition
         * _k_ = a house in visited subset i.
-        * value(i, j) = min(value(i without k, k) + distance(k, j)) for every k in i.
-        * In the end, we need to calculate again min(value(full set without k) + distance(k, start)) for every k in full set of houses.
+        * value(i, j) = min(value(i without j, k) + distance(k, j)) for every k in i that is not j.
+        * In the end, we need to calculate again min(value(full set, k) + distance(k, start)) for every k in full set of houses.
     * Time complexity
         * Pre-calculate distances between every pair of houses = O(H * n)
-        * Calculate min path distance = ?? T
+        * Calculate min path distance = O(2^H * H) states * O(H) for each state transition = O(2^H * H^2)
+* Notes
+    * Using bitmask/bitmap as a state parameter usually entails a O(2^n) complexity. The benefit is usually to bring complexity down from O(n!).
 
