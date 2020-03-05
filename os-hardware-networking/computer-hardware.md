@@ -3,7 +3,10 @@ Collection of notes of computer harware parts.
 
 ---
 ## Memory
-### L1, L2 cache
+### CPU (L1, L2) cache 
+* CPU caches are small pools of memory that store information the CPU is most likely to need next.
+* The goal of the cache system is to ensure that the CPU has the next bit of data it will need already loaded into cache by the time it goes looking for it (also called a cache hit).
+* https://www.extremetech.com/extreme/188776-how-l1-and-l2-cpu-caches-work-and-why-theyre-an-essential-part-of-modern-chips
 
 ### Address space
 * An address space defines a range of discrete addresses, each of which may correspond to a network host, peripheral device, disk sector, or a memory cell.
