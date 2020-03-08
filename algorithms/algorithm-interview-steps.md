@@ -5,8 +5,8 @@
 * Output: format
 * Logic: happy case, bad case (write them down for testing)
 
-## Brute-force
-* Find a brute-force solution
+## Naive solution
+* Find a naive solution
 * Explain time complexity
 
 ## Find repeated effort/ bottleneck and optimize
