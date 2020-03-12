@@ -1,5 +1,11 @@
 # Computer hardware
 Collection of notes of computer harware parts.
+---
+## CPU
+
+### Interrupt
+* An interrupt is an input signal to the processor indicating an event that needs immediate attention. An interrupt signal alerts the processor and serves as a request for the processor to interrupt the currently executing code, so that the event can be processed in a timely manner. If the request is accepted, the processor responds by suspending its current activities, saving its state, and executing a function called an interrupt handler.
+* Interrupts are commonly used by hardware devices to indicate electronic or physical state changes that require attention. Interrupts are also commonly used to implement computer multitasking, especially in real-time computing.
 
 ---
 ## Memory
@@ -29,6 +35,15 @@ Collection of notes of computer harware parts.
 * A bus is a communication system that transfers data between components inside a computer, or between computers.
 * In most cases, the CPU and memory share signalling characteristics and operate in synchrony. The bus connecting the CPU and memory is one of the defining characteristics of the system, and often referred to simply as the system bus.
 * It is possible to allow peripherals to communicate with memory in the same fashion, attaching adaptors in the form of expansion cards directly to the system bus. However, as the performance differences between the CPU and peripherals varies widely, some solution is generally needed to ensure that peripherals do not slow overall system performance. 
+
+### System bus
+* A system bus is a single computer bus that connects the major components of a computer system, combining the functions of a data bus to carry information, an address bus to determine where it should be sent, and a control bus to determine its operation.
+* Since 2005/2006, considering an architecture in which 4 processors share a chipset, the DIB is composed by two buses, each of them is shared among two CPUs. The theoretical bandwidth is doubled compared to a shared front-side bus up to 12.8 GB/s in the best case.
+
+### Paralle and serial bus
+* In data transmission, parallel communication is a method of conveying multiple binary digits (bits) simultaneously. It contrasts with serial communication, which conveys only a single bit at a time; this distinction is one way of characterizing a communications link.
+* The basic difference between a parallel and a serial communication channel is the number of electrical conductors used at the physical layer to convey bits. Parallel communication implies more than one such conductor.
+* One huge advantage of having fewer wires/pins in a serial cable is the significant reduction in the size, the complexity of the connectors, and the associated costs.
 
 ### Port-mapped I/O
 

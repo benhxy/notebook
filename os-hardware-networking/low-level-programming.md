@@ -1,0 +1,7 @@
+### Memory barrier
+* A memory barrier, also known as a membar, memory fence or fence instruction, is a type of barrier instruction that causes a central processing unit (CPU) or compiler to enforce an ordering constraint on memory operations issued before and after the barrier instruction. This typically means that operations issued prior to the barrier are guaranteed to be performed before operations issued after the barrier.
+* When a program runs on a single-CPU machine, the hardware performs the necessary bookkeeping to ensure that the program executes as if all memory operations were performed in the order specified by the programmer (program order), so memory barriers are not necessary. However, when the memory is shared with multiple devices, such as other CPUs in a multiprocessor system, or memory-mapped peripherals, out-of-order access may affect program behavior.
+
+
+### Synchronization primitives
+* Multithreaded programs usually use synchronization primitives provided by a high-level programming environment, such as Java and .NET Framework, or an application programming interface (API) such as POSIX Threads or Windows API. Synchronization primitives such as mutexes and semaphores are provided to synchronize access to resources from parallel threads of execution. These primitives are usually implemented with the memory barriers. In such environments explicit use of memory barriers is not generally necessary.
