@@ -24,6 +24,10 @@
 * It constructs a spanning tree from a network topology.
 * It eliminates loops when broadcasting a frame and prevent broadcast storm.
 
+## Routers
+* Routers connect multiple networks and move packets bewteen networks.
+* A router has multiple interfaces, each with a different IP address.
+
 ## References
 * [CSMD/CD and switching](https://www.youtube.com/watch?v=fxbhqxmWE4o)
 * [VLAN and VTP](https://www.youtube.com/watch?v=L6SKYEm1S2c)
