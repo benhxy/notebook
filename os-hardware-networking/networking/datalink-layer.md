@@ -20,6 +20,8 @@
 * VLAN tag is a field in ethernet header, which contains VLAN informationvfor that frame.
 * VTP (VLAN trunking protocal) allows a switch to push VLAN information to surrounding switches in a client/server manner.
 
+## VXLAN
+
 ## Spanning tree protocol (STP)
 * It constructs a spanning tree from a network topology.
 * It eliminates loops when broadcasting a frame and prevent broadcast storm.

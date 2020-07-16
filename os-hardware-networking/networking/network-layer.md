@@ -37,3 +37,7 @@
    * Use a subnet mask to specifically call out the bit length of host portion.
    * Subnets still belong to the classful networks. The class of original network can be still decided by the first octet.
    * Subnets add to the number of possible networks, because we can use the same IP address to represent different hosts (e.g. 4.4.0.2/8 represents network=4.0.0.0 and host 4.0.2, but 4.4.0.2/16 represents network=4.4.0.0, and host=0.2).
+
+## Routing protocols
+
+## NAT
