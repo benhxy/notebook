@@ -35,8 +35,25 @@
 
 ## Routing protocols
 
+## Neighbor protocol
+* The process used by the IP layer to find the L2 address associated with a given IP address.
+
 ## NAT
+
+
+
+## VLAN (virtual LAN)
+* VLAN segments a broadcast domain into multiple broadcast domains. It allows multiple LANs on a single switch.
+* A VLAN can also span several switches by trunk ports and VLAN tagging.
+* VLAN information is stored in a VLAN database file on switches.
+* VLAN tag is a field in ethernet header, which contains VLAN informationvfor that frame.
+* VTP (VLAN trunking protocal) allows a switch to push VLAN information to surrounding switches in a client/server manner.
+
+## Spanning tree protocol (STP)
+* It constructs a spanning tree from a network topology.
+* It eliminates loops when broadcasting a frame and prevent broadcast storm.
 
 ## Reference
 * [Private IP allocation RFC1918](https://tools.ietf.org/html/rfc1918)
 * [History of subnet](https://en.wikipedia.org/wiki/IP_address#Subnetting_history)
+* [VLAN and VTP](https://www.youtube.com/watch?v=L6SKYEm1S2c)

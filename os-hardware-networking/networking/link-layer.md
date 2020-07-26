@@ -1,4 +1,7 @@
-# Datalink layer (L2)
+# Link layer (L2)
+* L2 layer protocols are hardware-specific. 
+* If the frame is received on an Ethernet interface, the receiver knows it contains an Ethernet header, and a Token Ring interface knows it contains a Token Ring header, and so on.
+* For example, ARP is based on MAC address, so its an ethernet protocol.
 
 ## Hubs
 * All devices connected to a hub are considered being connected by a single wire loop.
@@ -25,17 +28,6 @@
 * A host with the ARP mapping sends back response by unicast.
 * ARP is a L2 protocol.
 
-## VLAN (virtual LAN)
-* VLAN segments a broadcast domain into multiple broadcast domains. It allows multiple LANs on a single switch.
-* A VLAN can also span several switches by trunk ports and VLAN tagging.
-* VLAN information is stored in a VLAN database file on switches.
-* VLAN tag is a field in ethernet header, which contains VLAN informationvfor that frame.
-* VTP (VLAN trunking protocal) allows a switch to push VLAN information to surrounding switches in a client/server manner.
-
-## Spanning tree protocol (STP)
-* It constructs a spanning tree from a network topology.
-* It eliminates loops when broadcasting a frame and prevent broadcast storm.
-
 ## VXLAN (Virtual eXtensible Local Area Network)
 * One of the network overlay standards to create multi-tenant virtual LANs in datacenters.
 * VXLAN is a tunneling protocol that encapsulates Layer 2 Ethernet frames in Layer 4 UDP packets, enabling you to create virtualized Layer 2 subnets.
@@ -43,6 +35,5 @@
 
 ## References
 * [CSMD/CD and switching](https://www.youtube.com/watch?v=fxbhqxmWE4o)
-* [VLAN and VTP](https://www.youtube.com/watch?v=L6SKYEm1S2c)
 * [Ethernet frame sample](https://www.cs.miami.edu/home/burt/learning/Csc524.092/notes/ip_example.html)
 * [VXLAN](https://www.juniper.net/us/en/products-services/what-is/vxlan/)
