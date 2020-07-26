@@ -12,7 +12,6 @@
 
 ## Comparison with IEnuberable in C#
 * Syntax
-* 
 
 ---
 ## Creation and collection

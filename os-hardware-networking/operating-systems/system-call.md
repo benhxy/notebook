@@ -12,3 +12,4 @@
 * https://softwareengineering.stackexchange.com/questions/343783/why-system-calls-are-limited-to-c-language-as-far-as-i-see
 * https://stackoverflow.com/questions/55735864/how-does-go-make-system-calls
 * https://en.wikipedia.org/wiki/System_call
+* https://0xax.gitbooks.io/linux-insides/content/SysCall/linux-syscall-1.html
