@@ -9,18 +9,18 @@
 * To set up development environment, check this out: https://github.com/kubernetes/community/tree/master/contributors/devel
 
 ## /cmd
-* This is where all the component binaries are eventually built from. Each child directory contains a main package, which is the starting point of that binary.
-* This is a good starting point if you want to dig into a specific component (e.g. kubelet).
+* This is where all the executable binaries are built from. Each child directory contains a main package, contains the main() function.
+* This is a good starting point if you want to dig into a specific component (e.g. kubelet, kubctl).
 
 ## /api/openapi-spec
 * This directory contains /swagger.json, which is the spec of all Kubernetes API.
 * This spec is used to generate or define the most fundamental data structures (struct) in Go language source code.
 
-## /staging/src/k8s.io
-* This is where most source codes are located.
-* Children directories are synced to other Git repos labeled with "k8s-staging" (e.g. https://github.com/kubernetes/kubelet). Those repos are then built and published as dependent packages.
+## /pkg, /vendor, and /staging/src/k8s.io
+* This is where most packages are located.
+* /pkg is the original location, and pacakges are gradually migrated to /staging, which is a transitional place. Eventually packages will migrate to separate repos.
+* Children directories are synced to other Git repos labeled with "k8s-staging" (e.g. https://github.com/kubernetes/kubelet). Those repos are then built, published, and imported as dependencies.
 * Inside the repo, these codes are resolved and imported from /vendor/k8s.io by symlinks.
-* The content in each directory is described in README.md files.
 
 ### ./apimachinery
 * This is a library that provide meta-structures and utilities for Kubernetes API types.
@@ -32,9 +32,8 @@
 * ./core: The most essential API object types, such as Container, Pod, Volumn, ConfigMap. This group of API is also served in REST path /api/v1. More on [Paths for API and API groups](https://www.oreilly.com/library/view/managing-kubernetes/9781492033905/ch04.html). This group's string representation in GroupVersion is empty string ```""```.
 * ./app: Higher-level API object types based on core group, such as Deployment, ReplicaSet.
 
-### ./client-go
-* Kubernetes API client library written in Go. It can be used to build other clients.
 
-### ./apiserver
-* A library for building API aggregator server.
-* ./pkg/server: 
+## Reference
+* [Code base tour](https://www.youtube.com/watch?v=yqB_le-N6EE)
+* [Building and running from source](https://www.youtube.com/watch?v=Q91iZywBzew)
+* [Source code clusterfuck](https://www.youtube.com/watch?v=4VNDjwzzKPo)
